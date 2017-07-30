@@ -48,6 +48,7 @@ gulp.task('styles', function(){
 	gulp.src(['src/styles/main.less'])
 	.pipe(sourcemaps.init())
 	.pipe(less())
+	.pipe(autoprefixer())
 	.pipe(minifyCss())
 	.pipe(sourcemaps.write())
 	.pipe(gulp.dest('dist/styles'))
