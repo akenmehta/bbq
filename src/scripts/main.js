@@ -1,16 +1,31 @@
+var countdown = require('countdown');
+
 var model = {
   init: function() {
     console.log('Model initialized');
-  }
+  },
+
+  currentDate: new Date(),
+  eventDate: new Date(2052, 12, 31)
 };
 
 var helper = {
-
+  dateDiff: function() {
+    return countdown(model.currentDate, model.eventDate);
+  }
 };
 
 var view = {
   init: function() {
-    console.log('View initialized');
+    view.showCountdown();
+  },
+
+  showCountdown: function() {
+    var diff = helper.dateDiff();
+
+    document.querySelector('#years').innerHTML = diff.years;
+    document.querySelector('#months').innerHTML = diff.months;
+    document.querySelector('#days').innerHTML = diff.days;
   }
 };
 
