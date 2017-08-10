@@ -70,7 +70,7 @@ gulp.task('default', ['styles', 'images', 'scripts', 'templates'], function(){
   browserSync.init({
     server: './'
   });
-  
+  //gulp.watch('src/**/*', browserSync.reload);
   gulp.watch('src/styles/**/*.less', ['styles']);
   gulp.watch('src/img/**/*', ['images']);
   gulp.watch('src/scripts/**/*.js', ['scripts']);
